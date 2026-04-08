@@ -8,7 +8,7 @@ fetch('travel_recommendation_api.json')
   })
   .catch(error => console.error('Error:', error));
 
-function search() {
+function searchDestinations() {
   if (!travelData) {
     alert('Data not loaded yet, please wait and try again.');
     return;
