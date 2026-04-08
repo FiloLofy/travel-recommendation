@@ -1,35 +1,39 @@
+let travelData = null;
+
 fetch('travel_recommendation_api.json')
   .then(response => response.json())
   .then(data => {
+    travelData = data;
     console.log('Data loaded:', data);
-    window.travelData = data;
   })
-  .catch(error => console.error('Error loading JSON:', error));
+  .catch(error => console.error('Error:', error));
 
 function search() {
+  if (!travelData) {
+    alert('Data not loaded yet, please wait and try again.');
+    return;
+  }
   const input = document.getElementById('searchInput').value.toLowerCase().trim();
   const resultsDiv = document.getElementById('results');
   resultsDiv.innerHTML = '';
-
   if (!input) return;
 
-  const data = window.travelData;
   let results = [];
 
   if (input.includes('beach') || input.includes('beaches')) {
-    results = data.beaches.map(item => ({
+    results = travelData.beaches.map(item => ({
       name: item.name,
       description: item.description,
       image: getImage(item.name)
     }));
   } else if (input.includes('temple') || input.includes('temples')) {
-    results = data.temples.map(item => ({
+    results = travelData.temples.map(item => ({
       name: item.name,
       description: item.description,
       image: getImage(item.name)
     }));
   } else {
-    data.countries.forEach(country => {
+    travelData.countries.forEach(country => {
       if (country.name.toLowerCase().includes(input)) {
         country.cities.forEach(city => {
           results.push({
