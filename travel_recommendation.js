@@ -32,6 +32,16 @@ function searchDestinations() {
       description: item.description,
       image: getImage(item.name)
     }));
+} else if (input.includes('country') || input.includes('countries')) {
+    travelData.countries.forEach(country => {
+      country.cities.forEach(city => {
+        results.push({
+          name: city.name,
+          description: city.description,
+          image: getImage(city.name)
+        });
+      });
+    });
   } else {
     travelData.countries.forEach(country => {
       if (country.name.toLowerCase().includes(input)) {
