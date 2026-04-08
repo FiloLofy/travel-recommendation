@@ -1,0 +1,110 @@
+cat > /home/project/travelRecommendation/contact.html << 'EOF'
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Travel Recommendations</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: Arial, sans-serif; background-color: #f5f5f5; }
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #1a1a2e;
+        padding: 15px 30px;
+        color: white;
+      }
+      .nav-logo { font-size: 1.3rem; font-weight: bold; color: white; }
+      .nav-links { display: flex; list-style: none; gap: 25px; }
+      .nav-links a { color: white; text-decoration: none; font-size: 1rem; }
+      .nav-links a:hover { color: #e94560; }
+
+      .contact-hero {
+        background-color: #1a1a2e;
+        color: white;
+        text-align: center;
+        padding: 60px 20px;
+      }
+      .contact-hero h1 { font-size: 2.5rem; margin-bottom: 15px; }
+      .contact-hero p { font-size: 1.1rem; }
+
+      .contact-form-section {
+        max-width: 600px;
+        margin: 50px auto;
+        background: white;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      }
+      .contact-form-section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+        color: #1a1a2e;
+        text-align: center;
+      }
+      .form-group { margin-bottom: 20px; }
+      .form-group label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: bold;
+        color: #333;
+      }
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 10px 14px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        font-size: 1rem;
+        font-family: Arial, sans-serif;
+      }
+      .form-group textarea { height: 150px; resize: vertical; }
+      .submit-btn {
+        width: 100%;
+        padding: 12px;
+        background-color: #e94560;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+      .submit-btn:hover { background-color: #c73652; }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-logo">✈️ Travel Recommendations</div>
+      <ul class="nav-links">
+        <li><a href="travel_recommendation.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <section class="contact-hero">
+      <h1>Contact Us</h1>
+      <p>Have a question or suggestion? We'd love to hear from you!</p>
+    </section>
+
+    <section class="contact-form-section">
+      <h2>Send us a Message</h2>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Your full name" />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Your email address" />
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" placeholder="Write your message here..."></textarea>
+      </div>
+      <button class="submit-btn">Submit</button>
+    </section>
+  </body>
+</html>
+EOF

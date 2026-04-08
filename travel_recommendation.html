@@ -1,0 +1,106 @@
+cat > /home/project/travelRecommendation/travel_recommendation.html << 'EOF'
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Recommendations</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: Arial, sans-serif; }
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #1a1a2e;
+        padding: 15px 30px;
+        color: white;
+      }
+      .nav-logo { font-size: 1.3rem; font-weight: bold; }
+      .nav-links { display: flex; list-style: none; gap: 25px; }
+      .nav-links a { color: white; text-decoration: none; font-size: 1rem; }
+      .nav-links a:hover { color: #e94560; }
+      .nav-search { display: flex; gap: 10px; }
+      .nav-search input {
+        padding: 8px 12px;
+        border-radius: 5px;
+        border: none;
+        width: 220px;
+      }
+      .nav-search button {
+        padding: 8px 16px;
+        border: none;
+        border-radius: 5px;
+        background-color: #e94560;
+        color: white;
+        cursor: pointer;
+      }
+      .nav-search button:hover { background-color: #c73652; }
+
+      /* HOME PAGE */
+      .hero {
+        background-image: url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1600');
+        background-size: cover;
+        background-position: center;
+        height: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+      }
+      .hero-overlay {
+        background-color: rgba(0,0,0,0.5);
+        padding: 50px 60px;
+        border-radius: 12px;
+      }
+      .hero h1 { font-size: 3rem; margin-bottom: 20px; }
+      .hero p { font-size: 1.2rem; max-width: 600px; }
+
+      /* RESULTS */
+      #results {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 40px;
+      }
+      .card {
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      }
+      .card img { width: 100%; height: 200px; object-fit: cover; }
+      .card-body { padding: 15px; }
+      .card-body h3 { margin-bottom: 8px; }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-logo">
+        <span>✈️ Travel Recommendations</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="travel_recommendation.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      <div class="nav-search">
+        <input type="text" id="searchInput" placeholder="Search destinations..." />
+        <button onclick="search()">Search</button>
+        <button onclick="clearResults()">Reset</button>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-overlay">
+        <h1>Discover Your Next Adventure</h1>
+        <p>Explore the most beautiful beaches, temples, and countries around the world. Your dream destination is just a search away.</p>
+      </div>
+    </section>
+
+    <div id="results"></div>
+
+    <script src="travel_recommendation.js"></script>
+  </body>
+</html>
+EOF

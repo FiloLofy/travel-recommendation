@@ -1,0 +1,115 @@
+cat > /home/project/travelRecommendation/about.html << 'EOF'
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Travel Recommendations</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: Arial, sans-serif; background-color: #f5f5f5; }
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #1a1a2e;
+        padding: 15px 30px;
+        color: white;
+      }
+      .nav-logo { font-size: 1.3rem; font-weight: bold; color: white; }
+      .nav-links { display: flex; list-style: none; gap: 25px; }
+      .nav-links a { color: white; text-decoration: none; font-size: 1rem; }
+      .nav-links a:hover { color: #e94560; }
+
+      .about-hero {
+        background-color: #1a1a2e;
+        color: white;
+        text-align: center;
+        padding: 60px 20px;
+      }
+      .about-hero h1 { font-size: 2.5rem; margin-bottom: 15px; }
+      .about-hero p { font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
+
+      .company-section {
+        max-width: 900px;
+        margin: 50px auto;
+        padding: 0 20px;
+        text-align: center;
+      }
+      .company-section h2 { font-size: 2rem; margin-bottom: 20px; color: #1a1a2e; }
+      .company-section p { font-size: 1rem; color: #555; line-height: 1.8; }
+
+      .team-section {
+        max-width: 1000px;
+        margin: 50px auto;
+        padding: 0 20px;
+        text-align: center;
+      }
+      .team-section h2 { font-size: 2rem; margin-bottom: 40px; color: #1a1a2e; }
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 30px;
+      }
+      .team-card {
+        background: white;
+        border-radius: 12px;
+        padding: 30px 20px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      }
+      .team-card .avatar {
+        font-size: 3rem;
+        margin-bottom: 15px;
+      }
+      .team-card h3 { font-size: 1.2rem; color: #1a1a2e; margin-bottom: 8px; }
+      .team-card p { font-size: 0.95rem; color: #e94560; font-weight: bold; }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-logo">✈️ Travel Recommendations</div>
+      <ul class="nav-links">
+        <li><a href="travel_recommendation.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <section class="about-hero">
+      <h1>About Us</h1>
+      <p>We are passionate travelers who believe everyone deserves to discover the world's most beautiful destinations.</p>
+    </section>
+
+    <section class="company-section">
+      <h2>Our Story</h2>
+      <p>Travel Recommendations was founded in 2024 with a simple mission: to help people find their perfect travel destination. Whether you're looking for a relaxing beach, a spiritual temple, or a vibrant country to explore, we provide curated recommendations to make your travel planning easy and inspiring.</p>
+    </section>
+
+    <section class="team-section">
+      <h2>Meet the Team</h2>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="avatar">🧭</div>
+          <h3>Marco Rossi</h3>
+          <p>Founder & CEO</p>
+        </div>
+        <div class="team-card">
+          <div class="avatar">🌍</div>
+          <h3>Sofia Bianchi</h3>
+          <p>Head of Content</p>
+        </div>
+        <div class="team-card">
+          <div class="avatar">📸</div>
+          <h3>Luca Ferrari</h3>
+          <p>Lead Photographer</p>
+        </div>
+        <div class="team-card">
+          <div class="avatar">💻</div>
+          <h3>Giulia Marino</h3>
+          <p>Web Developer</p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
+EOF
